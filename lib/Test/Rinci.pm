@@ -1,16 +1,17 @@
 package Test::Rinci;
 
-use 5.010;
+use 5.010001;
 use strict;
 use warnings;
 #use Log::Any '$log';
 
+use File::Spec;
 use Perinci::Access::InProcess;
 #use SHARYANTO::Array::Util qw(match_array_or_regex); # we'll just use ~~
 use Test::Builder;
 use Test::More ();
 
-our $VERSION = '0.01'; # VERSION
+our $VERSION = '0.02'; # VERSION
 
 my $Test = Test::Builder->new;
 # XXX is cache_size=0 really necessary?
@@ -29,12 +30,15 @@ sub import {
 
 sub _test_package_metadata {
     my ($uri, $opts) = @_;
+    # XXX validate metadata
     $Test->ok(1, "currently no test for package metadata");
 }
 
 sub _test_function_metadata {
     my ($uri, $opts) = @_;
     my $ok = 1;
+
+    # XXX validate metadata
 
     my $res = $Pa->request(meta => $uri);
     $Test->is_num($res->[0], 200, "wrap (load meta)") or $ok = 0;
@@ -66,7 +70,7 @@ sub _test_function_metadata {
                     }
                     my $r = $Pa->request(call => $uri, {args=>$args});
                     $Test->is_num($r->[0], $eg->{status} // 200, "status")
-                        or $ok = 0;
+                        or do { $Test->diag($Test->explain($r)); $ok = 0 };
                     if (exists $eg->{result}) {
                         Test::More::is_deeply($r->[2], $eg->{result}, "result")
                               or $ok = 0;
@@ -79,6 +83,7 @@ sub _test_function_metadata {
 
 sub _test_variable_metadata {
     my ($uri, $opts) = @_;
+    # XXX validate metadata
     $Test->ok(1, "currently no test for variable metadata");
 }
 
@@ -264,9 +269,8 @@ sub metadata_in_all_modules_ok {
 1;
 # ABSTRACT: Test Rinci metadata
 
-
-
 __END__
+
 =pod
 
 =head1 NAME
@@ -275,7 +279,7 @@ Test::Rinci - Test Rinci metadata
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 
@@ -300,6 +304,8 @@ recommended that you include something like C<release-rinci.t> in your
 distribution if you add metadata to your code. If you use L<Dist::Zilla> to
 build your distribution, there is L<Dist::Zilla::Plugin::Test::Rinci> to make it
 easy to do so.
+
+=for Pod::Coverage ^(all_modules)$
 
 =head1 FUNCTIONS
 
@@ -381,10 +387,9 @@ Steven Haryanto <stevenharyanto@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Steven Haryanto.
+This software is copyright (c) 2013 by Steven Haryanto.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
