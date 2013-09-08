@@ -7,7 +7,7 @@ use Log::Any::App;
 
 use Test::Rinci;
 
-our $VERSION = '0.02'; # VERSION
+our $VERSION = '0.03'; # VERSION
 
 metadata_in_all_modules_ok();
 1;
@@ -24,7 +24,7 @@ test-rinci - Test Rinci metadata in all dist's modules
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 

@@ -17,14 +17,14 @@ my %module_build_args = (
     "Steven Haryanto <stevenharyanto\@gmail.com>"
   ],
   "dist_name" => "Test-Rinci",
-  "dist_version" => "0.02",
+  "dist_version" => "0.03",
   "license" => "perl",
   "module_name" => "Test::Rinci",
   "recommends" => {},
   "recursive_test_files" => 1,
   "requires" => {
     "Log::Any::App" => 0,
-    "Perinci::Access::InProcess" => "0.36",
+    "Perinci::Access::Perl" => "0.36",
     "Perinci::Sub::GetArgs::Argv" => "0.21",
     "Test::More" => "0.98",
     "perl" => "5.010001"
@@ -32,7 +32,12 @@ my %module_build_args = (
   "script_files" => [
     "bin/test-rinci"
   ],
-  "test_requires" => {}
+  "test_requires" => {
+    "Capture::Tiny" => 0,
+    "Test::More" => "0.88",
+    "Test::Script" => "1.05",
+    "blib" => 0
+  }
 );
 
 
