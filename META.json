@@ -14,14 +14,9 @@
    },
    "name" : "Test-Rinci",
    "prereqs" : {
-      "build" : {
-         "requires" : {
-            "Module::Build" : "0.3601"
-         }
-      },
       "configure" : {
          "requires" : {
-            "Module::Build" : "0.3601"
+            "ExtUtils::MakeMaker" : "6.30"
          }
       },
       "develop" : {
@@ -36,16 +31,17 @@
             "Log::Any::App" : "0",
             "Perinci::Access::Perl" : "0.36",
             "Perinci::Sub::GetArgs::Argv" : "0.21",
+            "Rinci" : "v1.1.39",
             "Test::More" : "0.98",
             "perl" : "5.010001"
          }
       },
       "test" : {
          "requires" : {
-            "Capture::Tiny" : "0",
-            "Test::More" : "0.88",
-            "Test::Script" : "1.05",
-            "blib" : "0"
+            "File::Spec" : "0",
+            "IO::Handle" : "0",
+            "IPC::Open3" : "0",
+            "Test::More" : "0"
          }
       }
    },
@@ -56,6 +52,6 @@
          "url" : "http://github.com/sharyanto/perl-Test-Rinci"
       }
    },
-   "version" : "0.03"
+   "version" : "0.04"
 }
 
