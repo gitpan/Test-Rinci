@@ -2,7 +2,7 @@ NAME
     Test::Rinci - Test Rinci metadata
 
 VERSION
-    version 0.04
+    version 0.05
 
 SYNOPSIS
     To check all metadata in a module:
@@ -81,6 +81,8 @@ FUNCTIONS
 
     Options are the same as in "metadata_in_module_ok()".
 
+    None are exported by default, but they are exportable.
+
 ACKNOWLEDGEMENTS
     Some code taken from Test::Pod::Coverage by Andy Lester.
 
@@ -92,6 +94,20 @@ SEE ALSO
     Perinci::Sub::Wrapper
 
     Dist::Zilla::Plugin::Test::Rinci
+
+HOMEPAGE
+    Please visit the project's homepage at
+    <https://metacpan.org/release/Test-Rinci>.
+
+SOURCE
+    Source repository is at HASH(0x4176bd8).
+
+BUGS
+    Please report any bugs or feature requests on the bugtracker website
+    https://rt.cpan.org/Public/Dist/Display.html?Name=Test-Rinci
+
+    When submitting a bug or request, please include a test-file or a patch
+    to an existing test-file that illustrates the bug or desired feature.
 
 AUTHOR
     Steven Haryanto <stevenharyanto@gmail.com>

@@ -4,7 +4,7 @@
       "Steven Haryanto <stevenharyanto@gmail.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300035, CPAN::Meta::Converter version 2.132140",
+   "generated_by" : "Dist::Zilla version 4.300038, CPAN::Meta::Converter version 2.132510",
    "license" : [
       "perl_5"
    ],
@@ -31,7 +31,7 @@
             "Log::Any::App" : "0",
             "Perinci::Access::Perl" : "0.36",
             "Perinci::Sub::GetArgs::Argv" : "0.21",
-            "Rinci" : "v1.1.39",
+            "Rinci" : "v1.1.40",
             "Test::More" : "0.98",
             "perl" : "5.010001"
          }
@@ -47,11 +47,16 @@
    },
    "release_status" : "stable",
    "resources" : {
-      "homepage" : "http://metacpan.org/release/Test-Rinci",
+      "bugtracker" : {
+         "web" : "https://rt.cpan.org/Public/Dist/Display.html?Name=Test-Rinci"
+      },
+      "homepage" : "https://metacpan.org/release/Test-Rinci",
       "repository" : {
-         "url" : "http://github.com/sharyanto/perl-Test-Rinci"
+         "type" : "git",
+         "url" : "git://github.com/sharyanto/perl-Test-Rinci.git",
+         "web" : "https://github.com/sharyanto/perl-Test-Rinci"
       }
    },
-   "version" : "0.04"
+   "version" : "0.05"
 }
 

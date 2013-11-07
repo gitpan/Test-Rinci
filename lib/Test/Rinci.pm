@@ -11,7 +11,7 @@ use Perinci::Access::Perl;
 use Test::Builder;
 use Test::More ();
 
-our $VERSION = '0.04'; # VERSION
+our $VERSION = '0.05'; # VERSION
 
 my $Test = Test::Builder->new;
 # XXX is cache_size=0 really necessary?
@@ -51,6 +51,7 @@ sub _test_function_metadata {
         my $i = 0;
         for my $eg (@{ $meta->{examples} }) {
             $i++;
+            next unless $eg->{test} // 1;
             $Test->subtest(
                 "example #$i" . ($eg->{summary} ? " ($eg->{summary})" : ""),
                 sub {
@@ -282,13 +283,15 @@ __END__
 
 =pod
 
+=encoding utf-8
+
 =head1 NAME
 
 Test::Rinci - Test Rinci metadata
 
 =head1 VERSION
 
-version 0.04
+version 0.05
 
 =head1 SYNOPSIS
 
@@ -376,6 +379,9 @@ C<run metadata_in_module_ok()> on each of them.
 
 Options are the same as in C<metadata_in_module_ok()>.
 
+
+None are exported by default, but they are exportable.
+
 =head1 ACKNOWLEDGEMENTS
 
 Some code taken from L<Test::Pod::Coverage> by Andy Lester.
@@ -389,6 +395,23 @@ L<Rinci>
 L<Perinci::Sub::Wrapper>
 
 L<Dist::Zilla::Plugin::Test::Rinci>
+
+=head1 HOMEPAGE
+
+Please visit the project's homepage at L<https://metacpan.org/release/Test-Rinci>.
+
+=head1 SOURCE
+
+Source repository is at L<HASH(0x4176bd8)>.
+
+=head1 BUGS
+
+Please report any bugs or feature requests on the bugtracker website
+https://rt.cpan.org/Public/Dist/Display.html?Name=Test-Rinci
+
+When submitting a bug or request, please include a test-file or a
+patch to an existing test-file that illustrates the bug or desired
+feature.
 
 =head1 AUTHOR
 

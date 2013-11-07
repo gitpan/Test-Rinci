@@ -7,7 +7,7 @@ use Log::Any::App;
 
 use Test::Rinci;
 
-our $VERSION = '0.04'; # VERSION
+our $VERSION = '0.05'; # VERSION
 
 metadata_in_all_modules_ok();
 1;
@@ -18,13 +18,15 @@ __END__
 
 =pod
 
+=encoding utf-8
+
 =head1 NAME
 
 test-rinci - Test Rinci metadata in all dist's modules
 
 =head1 VERSION
 
-version 0.04
+version 0.05
 
 =head1 SYNOPSIS
 
@@ -44,6 +46,23 @@ Provide options.
 =head1 SEE ALSO
 
 L<Test::Rinci>
+
+=head1 HOMEPAGE
+
+Please visit the project's homepage at L<https://metacpan.org/release/Test-Rinci>.
+
+=head1 SOURCE
+
+Source repository is at L<HASH(0x4176bd8)>.
+
+=head1 BUGS
+
+Please report any bugs or feature requests on the bugtracker website
+https://rt.cpan.org/Public/Dist/Display.html?Name=Test-Rinci
+
+When submitting a bug or request, please include a test-file or a
+patch to an existing test-file that illustrates the bug or desired
+feature.
 
 =head1 AUTHOR
 
