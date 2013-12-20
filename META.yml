@@ -18,7 +18,7 @@ meta-spec:
 name: Test-Rinci
 requires:
   Log::Any::App: 0
-  Perinci::Access::Perl: 0.36
+  Perinci::Access::Perl: 0.55
   Perinci::Sub::GetArgs::Argv: 0.21
   Rinci: v1.1.40
   Test::More: 0.98
@@ -28,7 +28,7 @@ resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=Test-Rinci
   homepage: https://metacpan.org/release/Test-Rinci
   repository: git://github.com/sharyanto/perl-Test-Rinci.git
-version: 0.06
+version: 0.07
 x_Dist_Zilla:
   perl:
     version: 5.018001
@@ -214,7 +214,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Rinci::Validate
       name: '@Filter/Rinci::Validate'
-      version: 0.09
+      version: 0.11
     -
       class: Dist::Zilla::Plugin::Test::Compile
       config:

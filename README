@@ -2,7 +2,7 @@ NAME
     Test::Rinci - Test Rinci metadata
 
 VERSION
-    version 0.06
+    version 0.07
 
 SYNOPSIS
     To check all metadata in a module:

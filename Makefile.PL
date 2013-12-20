@@ -23,7 +23,7 @@ my %WriteMakefileArgs = (
   "NAME" => "Test::Rinci",
   "PREREQ_PM" => {
     "Log::Any::App" => 0,
-    "Perinci::Access::Perl" => "0.36",
+    "Perinci::Access::Perl" => "0.55",
     "Perinci::Sub::GetArgs::Argv" => "0.21",
     "Rinci" => "v1.1.40",
     "Test::More" => "0.98",
@@ -35,7 +35,7 @@ my %WriteMakefileArgs = (
     "IPC::Open3" => 0,
     "Test::More" => "0.98"
   },
-  "VERSION" => "0.06",
+  "VERSION" => "0.07",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -47,7 +47,7 @@ my %FallbackPrereqs = (
   "IO::Handle" => 0,
   "IPC::Open3" => 0,
   "Log::Any::App" => 0,
-  "Perinci::Access::Perl" => "0.36",
+  "Perinci::Access::Perl" => "0.55",
   "Perinci::Sub::GetArgs::Argv" => "0.21",
   "Rinci" => "v1.1.40",
   "Test::More" => "0.98",
