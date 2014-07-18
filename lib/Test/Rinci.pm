@@ -12,7 +12,7 @@ use Perinci::Access::Perl 0.55;
 use Test::Builder;
 use Test::More ();
 
-our $VERSION = '0.07'; # VERSION
+our $VERSION = '0.08'; # VERSION
 
 my $Test = Test::Builder->new;
 # XXX is cache_size=0 really necessary?
@@ -84,7 +84,11 @@ sub _test_function_metadata {
                         or do { $Test->diag($Test->explain($r)); $ok = 0 };
                     if (exists $eg->{result}) {
                         Test::More::is_deeply($r->[2], $eg->{result}, "result")
-                              or $ok = 0;
+                              or do {
+                                  Test::More::diag(
+                                      Test::More::explain($r->[2]));
+                                  $ok = 0;
+                              };
                     }
                 }) or $ok = 0;
         }
@@ -294,7 +298,7 @@ Test::Rinci - Test Rinci metadata
 
 =head1 VERSION
 
-version 0.07
+This document describes version 0.08 of Test::Rinci (from Perl distribution Test-Rinci), released on 2014-07-18.
 
 =head1 SYNOPSIS
 
@@ -418,7 +422,7 @@ Steven Haryanto <stevenharyanto@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Steven Haryanto.
+This software is copyright (c) 2014 by Steven Haryanto.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
