@@ -1,15 +1,32 @@
 #!perl
 
+our $DATE = '2014-12-17'; # DATE
+our $VERSION = '0.09'; # VERSION
+
 use 5.010;
 use strict;
 use warnings;
-use Log::Any::App;
 
+use Getopt::Long qw(:config auto_help auto_version);
 use Test::Rinci;
 
-our $VERSION = '0.08'; # VERSION
+my %opts = (
+    exclude_packages => [],
+    exclude_functions => [],
+    wrap_function => 1,
+    test_function_examples => 1,
+);
+GetOptions(
+    'exclude-package=s' => $opts{exclude_packages},
+    'exclude-function=s' => $opts{exclude_functions},
+    'W' => sub { $opts{wrap_function} = 0 },
+    'E' => sub { $opts{test_function_examples} = 0 },
+);
 
-metadata_in_all_modules_ok();
+metadata_in_all_modules_ok(
+    \%opts,
+);
+
 1;
 # ABSTRACT: Test Rinci metadata in all dist's modules
 # PODNAME: test-rinci
@@ -26,22 +43,44 @@ test-rinci - Test Rinci metadata in all dist's modules
 
 =head1 VERSION
 
-This document describes version 0.08 of test-rinci (from Perl distribution Test-Rinci), released on 2014-07-18.
+This document describes version 0.09 of test-rinci (from Perl distribution Test-Rinci), released on 2014-12-17.
 
 =head1 SYNOPSIS
 
 In your dist directory:
 
- % test-rinci
+ % test-rinci [options]
 
 =head1 DESCRIPTION
 
 This script is an command-line interface for L<Test::Rinci>'s
 C<metadata_in_all_modules_ok()> function.
 
+=head1 OPTIONS
+
+=over
+
+=item * --exclude-package=s
+
+Exclude a package. Can be specified multiple times.
+
+=item * --exclude-function=s
+
+Exclude a function. Can be specified multiple times.
+
+=item * -E
+
+This sets C<test_function_examples> to 0.
+
+=item * -W
+
+This sets C<wrap_function> to 0.
+
+=back
+
 =head1 TODO
 
-Provide options.
+Add option -l (like prove)?
 
 =head1 SEE ALSO
 
@@ -53,7 +92,7 @@ Please visit the project's homepage at L<https://metacpan.org/release/Test-Rinci
 
 =head1 SOURCE
 
-Source repository is at L<https://github.com/sharyanto/perl-Test-Rinci>.
+Source repository is at L<https://github.com/perlancar/perl-Test-Rinci>.
 
 =head1 BUGS
 
@@ -65,11 +104,11 @@ feature.
 
 =head1 AUTHOR
 
-Steven Haryanto <stevenharyanto@gmail.com>
+perlancar <perlancar@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by Steven Haryanto.
+This software is copyright (c) 2014 by perlancar@cpan.org.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

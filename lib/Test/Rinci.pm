@@ -1,5 +1,8 @@
 package Test::Rinci;
 
+our $DATE = '2014-12-17'; # DATE
+our $VERSION = '0.09'; # VERSION
+
 use 5.010001;
 use strict;
 use warnings;
@@ -11,8 +14,6 @@ use Perinci::Access::Perl 0.55;
 #use SHARYANTO::Array::Util qw(match_array_or_regex); # we'll just use ~~
 use Test::Builder;
 use Test::More ();
-
-our $VERSION = '0.08'; # VERSION
 
 my $Test = Test::Builder->new;
 # XXX is cache_size=0 really necessary?
@@ -298,7 +299,7 @@ Test::Rinci - Test Rinci metadata
 
 =head1 VERSION
 
-This document describes version 0.08 of Test::Rinci (from Perl distribution Test-Rinci), released on 2014-07-18.
+This document describes version 0.09 of Test::Rinci (from Perl distribution Test-Rinci), released on 2014-12-17.
 
 =head1 SYNOPSIS
 
@@ -406,7 +407,7 @@ Please visit the project's homepage at L<https://metacpan.org/release/Test-Rinci
 
 =head1 SOURCE
 
-Source repository is at L<https://github.com/sharyanto/perl-Test-Rinci>.
+Source repository is at L<https://github.com/perlancar/perl-Test-Rinci>.
 
 =head1 BUGS
 
@@ -418,11 +419,11 @@ feature.
 
 =head1 AUTHOR
 
-Steven Haryanto <stevenharyanto@gmail.com>
+perlancar <perlancar@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by Steven Haryanto.
+This software is copyright (c) 2014 by perlancar@cpan.org.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
